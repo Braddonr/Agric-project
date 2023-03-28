@@ -1,0 +1,21 @@
+
+strong{
+    color:  green;
+    font-size: large;
+}
+
+p{
+    text-align: center;
+  
+    font-size: medium;
+}
+.card {
+ 
+   font-size: 588px;
+  position: relative;
+  height: 499px;
+  width: 320px;
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+}

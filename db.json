@@ -1,0 +1,118 @@
+{
+    "products": [
+        
+{
+  "id": 1,  
+  "category": "Cereals and Grains", 
+    "name": "Yellow Beans",
+    "price": 800,
+    "imageURL": "/assets/images/image 1.jpg" 
+  },
+  {
+    "id": 2,
+    "category": "Cereals and Grains", 
+    "name": "Lentils",
+    "price": 300,
+    "imageURL": "/assets/images/image 2.jpg" 
+  },
+  {
+    "id": 3,
+    "category": "Cereals and Grains", 
+    "name": "Kamande",
+    "price": 400,
+    "imageURL": "/assets/images/image 3.jpg" 
+  },
+  {
+    "id": 4,
+    "category": "Cereals and Grains", 
+    "name": "Red Beans",
+    "price": 900,
+    "imageURL": "/assets/images/image 4.jpg" 
+  },
+  {
+    "id": 5,
+    "category": "Cereals and Grains", 
+    "name": "Maize",
+    "price": 1200,
+    "imageURL": "/assets/images/image 5.jpg" 
+  },
+  {
+    "id": 6,
+    "category": "Animals Feeds Produce", 
+    "name": "Napier Grass",
+    "price": 200,
+    "imageURL": "/assets/images/image 6.jpg" 
+  },
+  {
+    "id": 7,
+    "category": "Bulk Fruit and Vegetables", 
+    "name": "Potatoes",
+    "price": 600,
+    "imageURL": "/assets/images/image 7.jpg" 
+  },
+  {
+    "id": 8,
+    "category": "Cereals and Grains", 
+    "name": "Sorghum",
+    "price": 150,
+    "imageURL": "/assets/images/image 8.jpg" 
+  },
+  {
+    "id": 9,
+    "category": "Bulk Fruit and Vegetables", 
+    "name": "Apples",
+    "price": 2000,
+    "imageURL": "/assets/images/image 9.jpg" 
+  },
+  {
+    "id": 10,
+    "category": "Bulk Fruit and Vegetables", 
+    "name": "Oranges",
+    "price": 150,
+    "imageURL": "/assets/images/image 10.jpg" 
+  },
+  {
+    "id": 11,
+    "category": "Bulk Fruit and Vegetables", 
+    "name": "Sugarcane",
+    "price": 100,
+    "imageURL": "/assets/images/image 11.jpg" 
+  },
+  {
+    "id": 12,
+    "category": "Animals Feeds Produce", 
+    "name": "Livestock Salt",
+    "price": 600,
+    "imageURL": "/assets/images/image 12.jpg" 
+  },
+  {
+    "id": 13,
+    "category": "Agriculture Services", 
+    "name": "Animal Tagging",
+    "price": 700,
+    "imageURL": "/assets/images/image 13.jpg" 
+  },
+  {
+    "id": 14,
+    "category": "Livestock and Poultry", 
+    "name": "Piglets",
+    "price": 1500,
+    "imageURL": "/assets/images/image 14.jpg" 
+  },
+  {
+    "id": 15,
+    "category": "Livestock and Poultry", 
+    "name": "Turkey",
+    "price": 2000,
+    "imageURL": "/assets/images/image 15.jpg" 
+  },
+  {
+    "id": 16,
+    "category": "Livestock and Poultry", 
+    "name": "Guinea-Fowls",
+    "price": 1000,
+    "imageURL": "/assets/images/image 16.jpg" 
+  }
+  
+    ]
+}

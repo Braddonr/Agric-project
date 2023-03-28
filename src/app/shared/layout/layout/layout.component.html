@@ -1,0 +1,77 @@
+<header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  </header>
+  <nz-layout class="font">
+    <nz-header>
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+        <li nz-menu-item nzSelected>My Wallet</li>
+        <li nz-menu-item [routerLink]="['../profile']">Edit profile</li>
+        <li nz-menu-item [routerLink]="['../shared/login']">Log out </li>
+      </ul>
+    </nz-header>
+    <nz-layout>
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="inline" class="sider-menu">
+          <li nz-submenu nzOpen nzIcon="user" nzTitle="My Farm" class="text-sm">
+            <ul>
+              <li nz-menu-item nzSelected>option1</li>
+              <li nz-menu-item>option2</li>
+              <li nz-menu-item>option3</li>
+              <li nz-menu-item>option4</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Suppliers" nzIcon="laptop" class="text-sm">
+            <ul>
+              <li nz-menu-item>option5</li>
+              <li nz-menu-item>option6</li>
+              <li nz-menu-item>option7</li>
+              <li nz-menu-item>option8</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Marketplace" nzIcon="notification" class="text-sm">
+            <ul>
+              <li nz-menu-item>option9</li>
+              <li nz-menu-item>option10</li>
+              <li nz-menu-item>option11</li>
+              <li nz-menu-item>option12</li>
+            </ul>
+          </li>
+          <li nz-submenu nzOpen nzIcon="user" nzTitle="Transporters" class="text-sm">
+            <ul>
+              <li nz-menu-item nzSelected>option1</li>
+              <li nz-menu-item>option2</li>
+              <li nz-menu-item>option3</li>
+              <li nz-menu-item>option4</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Community" nzIcon="laptop" class="text-sm">
+            <ul>
+              <li nz-menu-item>option5</li>
+              <li nz-menu-item>option6</li>
+              <li nz-menu-item>option7</li>
+              <li nz-menu-item>option8</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Weather" nzIcon="notification" class="text-sm">
+            <ul>
+              <li nz-menu-item>option9</li>
+              <li nz-menu-item>option10</li>
+              <li nz-menu-item>option11</li>
+              <li nz-menu-item>option12</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout class="inner-layout">
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+          <nz-breadcrumb-item>List</nz-breadcrumb-item>
+          <nz-breadcrumb-item>App</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <nz-content>Content</nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>

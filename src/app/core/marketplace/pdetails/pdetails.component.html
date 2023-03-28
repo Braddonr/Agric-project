@@ -1,0 +1,249 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800&family=Open+Sans&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+  
+  </head>
+
+<div class="font">
+<nz-layout>
+  <nz-header>
+    <div class="">
+      <div class="flex">
+        <div class="flex xs:space-x-8">
+        <div class="xs:absolute xs:left-0 xs:top-0 xs:py-4 sm:p-2 md:p-2 lg:p-4 px-1 mr-10 xs:h-6 xs:w-20 sm:h-5 sm:w-24 md:h-5 md:w-24 lg:h-6 lg:w-36">
+          <a routerLink="/shared/landingpage"><img src="/assets/images/logo.png"></a>
+        </div>
+        
+        <div class="flex xs:space-x-1 sm:space-x-24 md:space-x-36 lg:space-x-96">
+          <div class="xs:w-28 sm:w-36 md:w-40 lg:w-96 ">
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+              <input [(ngModel)]="searchTerm" (keyup)="search($event)" type="text" nz-input placeholder="Type your search here" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <i nz-icon nzType="search"></i>
+            </ng-template>
+          </div>
+    
+        <div class="flex flex-row xs:space-x-1 sm:space-x-2 md:space-x-2 lg:space-x-3 sm:mx-2">
+          <div class="py-4">
+            <button routerLink="/core/cart" class="flex flex-auto rounded-md bg-white text-green-600 text-center text-sm xs:text-xs xs:h-8 xs:w-18 sm:h-10 md:h-10 lg:w-full lg:h-10">
+              <div class="xs:p-1 sm:p-1 md:p-1 lg:p-1 lg:whitespace-nowrap lg:py-2">
+                KSh. {{grandTotal}}.0
+              </div>
+                <div class="icon-button">
+                  <span class="material-symbols-outlined text-green-600 text-[16px]">shopping_cart</span>
+                  <span class="button__badge">{{totalItem}}</span>
+                </div>
+              </button>
+          </div>
+
+          <div class="flex py-4">
+            <button type="button" class="icon-button">
+              <span class="material-symbols-outlined text-gray-200"> chat</span>
+              <span class="icon-button__badge">1</span>
+            </button>
+          </div>
+
+          <div class="flex py-4">
+            <button type="button" class="icon-button">
+              <span class="material-icons text-gray-200">notifications</span>
+              <span class="icon-button__badge">1</span>
+            </button>
+          </div>
+
+          <button routerLink="/shared/prof">
+            <img src="/assets/images/profile_photo.png" class="xs:h-8 xs:w-8 sm:h-8 sm:w-12 md:h-10 md:w-10 lg:h-10 lg:w-14 object-cover rounded-full">
+          </button>
+
+          <div class="flex">
+          <button routerLink="/core/ads" class="rounded-sm bg-red-500 text-white text-xs font-light text-center xs:h-8 xs:w-10 sm:h-8 sm:w-12 md:h-8 md:w-12 lg:h-8 lg:w-16 mt-4">SELL</button>
+        </div>
+      </div>
+        
+        </div>
+      </div>
+      </div>
+    </div>
+  </nz-header>
+  <nz-content>
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <a routerLink="/shared/landingpage" ><i nz-icon style="font-size: 20px; color: green;" nzType="home" nzTheme="fill" class=""></i></a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item><a>{{category}}</a></nz-breadcrumb-item>
+      <nz-breadcrumb-item><a>.prod-subcategory</a></nz-breadcrumb-item>
+      <nz-breadcrumb-item>{{name}}</nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+
+    <div class="inner-content">
+      <div class="flex">
+        <div class="flex-row">
+          <div class="">
+            <div class="xs:w-[250px] lg:max-w-screen-md bg-white h-auto">
+              <div>
+              <div >
+              <div class="p-1">
+                <img src="{{imageURL}}" class="rounded-lg lg:w-[784px] lg:h-[384px]">
+              </div>
+              <div class="flex py-2 p-1 w-auto space-x-1">
+                <div><img src="{{imageURL}}"></div>
+                <div><img src="{{imageURL}}"></div>
+                <div><img src="{{imageURL}}"></div>
+                <div><img src="{{imageURL}}"></div>
+                <div><img src="{{imageURL}}"></div>
+              </div>
+              <div class="p-1 py-4 text-xl">{{name}}</div>
+              <div class="flex flex-auto w-full">
+                <div class="flex flex-auto px-2 space-x-4">
+                  <!-- <div class="badge badge-primary bg-green-700 justify-center text-white h-8 w-20 px-4 py-1.5 rounded-md">Verified</div> -->
+                  <button disabled class="outline-green bg-green-700 text-white h-6 xs:w-11 xs:text-[10px] rounded-md px-2">Verified</button>
+                  <div class="flex flex-row text-xs text-gray-400 xs:text-[10px] xs:w-[20px] xs:h-[20px]">
+                    <i nz-icon nzType="calendar" style="display: flex; font-size: 14px; color: white; background: gray;
+                   justify-content: center; align-items: center; border-radius: 50%; width: 23px; height: 23px;
+                    " nzTheme="outline" class=""></i>
+
+                    <div class="xs:px-1 lg:px-1 lg:py-1">{{timePosted}} </div>
+                  </div>
+                  <div class="flex flex-row text-xs text-gray-400 xs:text-[10px] xs:px-4 xs:w-[20px] xs:h-[20px]">
+                    <i nz-icon nzType="compass" style="display: flex; font-size: 94px; color: white; background: gray;
+                    justify-content: center; align-items: center; border-radius: 50%; width: 23px; height: 23px;"
+                      nzTheme="outline"></i>
+                    <div class="xs:px-1 lg:px-1 lg:py-1"> {{location}} </div>
+                  </div>
+                </div>
+                <div class="flex flex-row text-xs text-gray-400 text-right xs:text-[10px]">
+                  <i nz-icon nzType="eye" style="display: flex; font-size: 18px; color: white; background: gray;
+                  justify-content: center; align-items: center; border-radius: 50%; width: 23px; height: 23px;"
+                    nzTheme="outline"></i>
+                  <div class="xs:px-1 lg:px-1 lg:py-1 lg:mr-2"> {{totalView}} Views</div>
+                </div>
+              </div>
+
+
+              <div class=" p-2 xs:py-8 lg:py-4">
+                <div class="border-t-2 border-gray-150 w-100%"></div>
+              </div>
+
+              <div class="px-2 xs:text-xs">Description*
+                <br> {{description}}
+              </div>
+
+              <div class=" p-2 py-4">
+                <div class="border-t-2 border-gray-150 w-100%"></div>
+              </div>
+
+              <div class="px-2 pb-2 flex space-x-5">
+
+                <button><i nz-icon nzType="facebook" style="display: flex; font-size: 18px; color: white; background: blue;
+                justify-content: center; align-items: center; border-radius: 50%; width: 28px; height: 28px;"
+                    nzTheme="outline"></i>
+                </button>
+                <button>
+                  <i nz-icon nzType="inbox" style="display: flex; font-size: 18px; color: white; background: orange;
+                justify-content: center; align-items: center; border-radius: 50%; width: 28px; height: 28px;"
+                    nzTheme="outline"></i>
+                </button>
+                <button>
+                  <i nz-icon nzType="twitter" style="display: flex; font-size: 18px; color: white; background: blue;
+                justify-content: center; align-items: center; border-radius: 50%; width: 28px; height: 28px;"
+                    nzTheme="outline"></i>
+                </button>
+                <button>
+                  <i nz-icon nzType="whats-app" style="display: flex; font-size: 18px; color: white; background: green;
+                justify-content: center; align-items: center; border-radius: 50%; width: 28px; height: 28px;"
+                    nzTheme="outline"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          </div>
+
+            <div class="xs:w-[250px] sm:max-w-screen-md lg:max-w-screen-md bg-rgb(245, 237, 237) my-6 h-auto">
+              <ul class=" text-xs flex lg:justify-center lg:items-center flex-wrap list-none p-0">
+                <li *ngFor="let product of productList | filter: searchKey:'name'">
+                  <a
+                    class="bg-white p-1 h-48 xs:w-[125px] sm:w-[167px] lg:w-48 border-2 border-solid border-whitesmoke rounded-none flex flex-col overflow-hidden hover: opacity-90">
+                    <button (click)="selectProduct(product)"> <img src="{{product.imageURL}}" alt=""></button>
+                    <div class="text-xs">
+                      <div class="text-gray-400">
+                        {{product.category}}
+                      </div>
+                      <span class="text-black">{{product.name}}</span>
+                      <div class="text-gray-400">
+                        {{product.price}}
+                      </div>
+                      <div class=" p-1 text-right text-red-600 text-xs">
+                        <button (click)="addtoCart(product, item)" class="p-1 outline-offset-0 rounded-md border-2 border-red-700"> ADD TO CART</button>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="xs:w-[115px] flex-1 xs:mx-1 sm:mx-1 md:mx-2 lg:mx-6 ">
+          <div class="xs:w-[115px] lg:w-56 h-auto bg-white">
+            <div class="text-xl p-2">KSh. {{selectedProduct.total}} </div>
+            <div class=" px-2">
+              <div class="border-t-2 border-gray-150 w-100%"></div>
+            </div>
+
+            <div>
+              <div class="flex flex-row p-2 space-x-5">
+                <button type="button"(click)="minus(selectedProduct)"><i nz-icon nzType="minus" nzTheme="outline"
+                    style="display: flex; justify-content: center; align-items: center; width: 23px; height: 23px;font-size: 16px; font-weight: 900; color:darkgreen; background-color: lightgrey;"></i></button>
+                <div class="text-2xl font-medium">{{selectedProduct.quantity}}</div>
+                <button type="button" (click)="plus(selectedProduct)" ><i nz-icon nzType="plus" nzTheme="outline"
+                    style="display: flex; justify-content: center; align-items: center; width: 23px; height: 23px;font-size: 16px; color: darkgreen; background-color: lightgrey;"></i></button>
+              </div>
+            </div>
+
+
+            <div class="px-2 py-2">
+              <button (click)="viewedtoCart(selectedProduct)" type="button"
+                class="w-[96%] h-8 mb-2 rounded-md outline-offset-0 border-2 text-sm text-green-600 border-green-500">
+                Add to Cart</button>
+            </div>
+          </div>
+
+          <div class=" xs:w-[115px] lg:w-56 h-auto bg-white my-4">
+            <div class="flex space-x-2 p-2">
+              <img class="w-10 h-10" src="/assets/images/profile_photo.png">
+              <div class="py-3 font-medium text-black">Johnson Makali</div>
+            </div>
+            <div class=" px-2">
+              <div class="border-t-2 border-gray-150 w-100%"></div>
+            </div>
+
+            <div class=" flex space-x-2 p-2">
+              <i nz-icon nzType="user" style=" height: 30px; width: 30px" nzTheme="outline"></i>
+              <div class="text-xs text-gray-400">About the farmer</div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </nz-content>
+  <nz-footer></nz-footer>
+</nz-layout>
+</div>

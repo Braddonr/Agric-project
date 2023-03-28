@@ -1,0 +1,115 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800&family=Open+Sans&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+  </head>
+<html class="h-full bg-gray-50">
+  <body class="h-full">
+  <div class="min-h-full flex flex-col justify-center sm:px-6 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-md">
+  <img class="mx-auto h-8 w-auto" src="/assets/images/logo.png" alt="Logo">
+  <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Create an account</h2>
+  <p class="mt-2 text-center text-sm text-gray-600">
+  Or
+  <a [routerLink]= "['../login']" class="font-medium text-green-600 hover:text-green-500"> Login into an already existing account </a>
+  </p>
+  </div>
+  
+  
+  <div class="sm:mx-auto sm:w-full sm:max-w-md w-auto">
+  <div class="bg-white py-2 px-4 shadow sm:rounded-lg sm:px-10 w-fit">
+  <form class="space-y-6"   [formGroup]="registerForm" (ngSubmit)="registerUser()">
+
+  <small class="text-green-600">{{msg}}</small>
+   
+  <div class="flex space-x-8">
+    <div class="">
+    <label for="firstName" class="block text-sm font-medium text-gray-700"> First Name </label>
+    <div class="">
+    <input id="firstName" formControlName="firstName" type="text" autocomplete="text" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      <span *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-red-600">Please enter your first name</span>
+     </div>
+    </div>
+
+    <div>
+    <label for="lastName" class="block text-sm font-medium text-gray-700">Second Name</label>
+    <div class="">
+    <input id="lastName" formControlName="lastName" type="text" autocomplete="text" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    <span *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-red-600">Please enter your last name</span>
+    </div>
+    </div>
+
+  </div>
+  
+  <div>
+    <label for="username" class="block text-sm font-medium text-gray-700"> User Name </label>
+    <div class="">
+    <input id="username" formControlName="username" type="text" autocomplete="username" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    <span *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-red-600">Please enter your  username</span>
+    </div>
+    </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-gray-700"> Email </label>
+    <div class="">
+    <input id="email" formControlName="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    <span *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-red-600">Please enter a valid email address</span>
+    </div>
+    </div>
+
+    <div class="flex space-x-8">
+      <div>
+        <label for="phonenumber" class="block text-sm font-medium text-gray-700"> Phone Number </label>
+        <div class="">
+            <div class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[320px]">
+              <input id="phoneNumber" formControlName="phoneNumber" type="text"  placeholder="+254 7XXXXXXXX" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            </div>
+        <span *ngIf="registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched" class="text-red-600">Please enter a valid phone number</span>
+        </div>
+        </div>
+  
+        <div>
+          <label for="role" class="block text-sm font-medium text-gray-700">Register As:</label>
+          <select id="role" formControlName="role" type="text" autocomplete="text" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <option value="Farmer">Farmer</option>
+            <option value="Buyer">Buyer</option>
+            <option value="Transporter">Transporter</option> 
+            <option value="Admin">Admin</option>
+          </select>
+          <span *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="text-red-600">Please enter Role</span>
+          </div>
+  
+    </div>
+    <div class="flex space-x-8">
+    <div>
+    <label for="password" class="block text-sm font-medium text-gray-700"> Password </label>
+    <div class="">
+    <input id="password" formControlName="password" type="password" autocomplete="password" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    <!-- <span *ngIf="registerForm.get('password')?.touched" class="text-red-600">Please enter a password</span> -->
+    <span *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-red-600">Please enter a password with a minimum of 8 characters, at least 1 uppercase letter, 1 lowercase
+      letter, 1 number, and at least 1 special character</span>
+
+    </div>
+    </div>
+
+    <div>
+    <label for="checkpassword" class="block text-sm font-medium text-gray-700"> Confirm Password</label>
+    <div class="">
+    <input id="checkpassword" formControlName="confirmPassword" type="password" autocomplete="confirmpassword" required class="appearance-none block w-50% px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    <span *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="text-red-600">Passwords do not match!</span>
+    </div>
+    </div>
+
+  </div>
+  
+  <div>
+  <button type="submit" [disabled]="registerForm.invalid"  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Create an account</button>
+  </div>
+  </form>
+  
+
+    </div>
+  </div>
+
+
+  

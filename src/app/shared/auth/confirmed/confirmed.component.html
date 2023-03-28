@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-info">
+      <h3>Almost there! </h3>
+      <p>Verify Email Done</p>
+      <p>Please Send verification code to this number : number </p>
+      <br>
+      <form class="space-y-6" >
+        <input type="text" placeholder="+254 7xxxxxxxx">
+        <br>
+        <button disabled="disabled"
+        class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Send</button>
+
+      </form>
+      <br> <br>
+      <form action="" method="post" >
+        <input type="text" placeholder="enter code here eg.123456">
+        <br> <br>
+        <button disabled="disabled"
+          class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Submit</button>
+        <p>Didn't receive code? Resend Code</p>
+        <p>Change Phone Number</p>
+      </form>
+    </div>
+  </div>
+  <div nz-result-extra>
+    <button routerLink="/shared/login" style="margin-right: 130px;"
+      class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Proceed
+      to Login</button>
+
+  </div>
+
+  <style>
+    .card {
+      width: 500px;
+
+      border: 1px solid white;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+
+
+      margin-top: 200px;
+      margin-left: 700px
+    }
+
+    .card-info {
+      padding: 20px;
+    }
+
+    .card-info h2 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card-info p {
+      font-size: 16px;
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+
+    .card-info a {
+      display: block;
+      margin-top: 20px;
+      font-size: 16px;
+      text-align: center;
+      color: #fff;
+      background-color: #333;
+    }
+  </style>
+</body>
+
+</html>

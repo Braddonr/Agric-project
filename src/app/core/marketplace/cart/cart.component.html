@@ -1,0 +1,196 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800&family=Open+Sans&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">  
+  </head>
+<div class="font">
+<nz-layout>
+  <nz-header>
+    <div class="">
+      <div class="flex">
+        <div class="flex xs:space-x-8">
+        <div class="xs:absolute xs:left-0 xs:top-0 xs:py-4 sm:p-2 md:p-2 lg:p-4 px-1 mr-10 xs:h-6 xs:w-20 sm:h-5 sm:w-24 md:h-5 md:w-24 lg:h-6 lg:w-36">
+          <a routerLink="/shared/landingpage"><img src="/assets/images/logo.png"></a>
+        </div>
+        
+        <div class="flex xs:space-x-1 sm:space-x-24 md:space-x-36 lg:space-x-96">
+          <div class="xs:w-28 sm:w-36 md:w-40 lg:w-96 ">
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+              <input [(ngModel)]="searchTerm" (keyup)="search($event)" type="text" nz-input placeholder="Type your search here" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <i nz-icon nzType="search"></i>
+            </ng-template>
+          </div>
+    
+        <div class="flex flex-row xs:space-x-1 sm:space-x-2 md:space-x-2 lg:space-x-3 sm:mx-2">
+          <div class="py-4">
+            <button class="flex flex-auto rounded-md bg-white text-green-600 text-center text-sm xs:text-xs xs:h-8 xs:w-18 sm:h-10 md:h-10 lg:w-full lg:h-10">
+              <div class="xs:p-1 sm:p-1 md:p-1 lg:p-1 lg:whitespace-nowrap lg:py-2">
+                KSh. {{grandTotal}}.0
+              </div>
+                <div class="icon-button">
+                  <span class="material-symbols-outlined text-green-600 text-[16px]">shopping_cart</span>
+                  <span class="button__badge">{{totalItem}}</span>
+                </div>
+              </button>
+          </div>
+
+          <div class="flex py-4">
+            <button type="button" class="icon-button">
+              <span class="material-symbols-outlined text-gray-200"> chat</span>
+              <span class="icon-button__badge">1</span>
+            </button>
+          </div>
+
+          <div class="flex py-4">
+            <button type="button" class="icon-button">
+              <span class="material-icons text-gray-200">notifications</span>
+              <span class="icon-button__badge">1</span>
+            </button>
+          </div>
+
+          <button routerLink="/shared/prof">
+            <img src="/assets/images/profile_photo.png" class="xs:h-8 xs:w-14 sm:h-8 sm:w-12 md:h-10 md:w-10 lg:h-10 lg:w-14 object-cover rounded-full">
+          </button>
+
+          <div class="flex">
+          <button routerLink="/core/ads" class="rounded-sm bg-red-500 text-white text-xs font-light text-center xs:h-8 xs:w-10 sm:h-8 sm:w-12 md:h-8 md:w-12 lg:h-8 lg:w-16 mt-4">SELL</button>
+        </div>
+      </div>
+        
+       
+        </div>
+      </div>
+      </div>
+    </div>
+  </nz-header>
+
+  <nz-content>
+    <nz-breadcrumb>
+      <nz-breadcrumb-item>
+        <a><i nz-icon style="font-size: 20px; color: green;" nzType="home" nzTheme="fill" routerLink="/shared/landingpage"></i></a>
+      </nz-breadcrumb-item>
+      <nz-breadcrumb-item><a>.shopping cart</a></nz-breadcrumb-item>
+    </nz-breadcrumb>
+
+    <div class="inner-content">
+      <div class="flex">
+        <div class="flex-row">
+          <div class="">
+            <div class="xs:w-[200px] sm:w-[350px] md:w-[600px] lg:w-[900px] bg-white h-auto">
+
+              <div class="p-2 text-xl text-green-600"> Cart ({{totalItem}})</div>
+
+              <div class="px-2 ">
+                <div class="border-t-2 border-gray-150 w-100%"></div>
+              </div>
+
+      
+           <div *ngIf="items.length !=0">
+            <div *ngFor="let item of items">
+              <div class="flex flex-auto w-full">
+                <div class="flex flex-auto space-x-3">
+                  <div><img src={{item.imageURL}} class="xs:h-16 xs:w-[180px] sm:h-28 sm:w-36 md:h-28 md:w-36 lg:h-28 lg:w-48 rounded-md p-2"></div>
+                  <div class="py-2">
+                    <div class="text-xs">{{item.name}}</div>
+                    <div class="py-1 text-xs">{{item.category}}</div>
+                    <div class="text-xs py-1">username</div>
+                    <button (click)="removeItem(item)" class="text.xs py-3">REMOVE</button>
+                  </div>
+                </div>
+
+                <div class="flex flex-col text-sm text-right xs:space-y-[120px] sm:space-y-12  lg:space-y-10">
+                  <div class="flex flex-row-reverse mr-2 py-4 text-xs">  KSh.{{item.total}}</div>
+                  <div>
+                    <div class="flex flex-row xs:mr-1 sm:mr-1 md:mr-2 lg:mr-2 xs:space-x-2 sm:space-x-2 md:space-x-3 lg:space-x-5 xs:text-sm">
+                      <button type="button"(click)="minus(item)"><i nz-icon nzType="minus" nzTheme="outline"
+                          style="display: flex; justify-content: center; align-items: center; width: 23px; height: 23px;font-size: 16px; font-weight: 900; color:darkgreen; background-color: lightgrey;"></i></button>
+                          <!-- <input type="text" [value]="item.quantity" class="text-2xl font-medium text-center w-16"> -->
+                          <div class="text-2xl font-medium">{{item.quantity}}</div>
+                      <button type="button"(click)="plus(item)"><i nz-icon nzType="plus" nzTheme="outline"
+                          style="display: flex; justify-content: center; align-items: center; width: 23px; height: 23px;font-size: 16px; color: darkgreen; background-color: lightgrey;"></i></button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="px-2 py-1">
+                <div class="border-t-2 border-gray-150 w-100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="items.length == 0">
+              <div class="p-2 text-xl text-green-600">
+                  Your cart is empty
+              </div>
+          </div>
+        </div>  
+
+            <div class="xs:w-[200px] sm:w-[350px] md:w-[600px] lg:w-[900px] bg-rgb(245, 237, 237) my-6 h-auto">
+              <ul class=" text-xs flex flex-wrap list-none p-0">
+                <li *ngFor="let product of productList | filter: searchKey:'name'">
+                  <a
+                    class="bg-white p-1 xs:h-42 xs:w-[100px] sm:h-42 sm:w-[175px] md:h-52 md:w-[200px] lg:h-52 lg:w-56  border-2 border-solid border-whitesmoke rounded-none flex flex-col overflow-hidden hover: opacity-90">
+                    <button (click)="selectProduct(product)" ><img src="{{product.imageURL}}" alt=""></button>
+                    <div class="text-xs">
+                      <div class="text-gray-400">
+                        {{product.category}}
+                      </div>
+                      <span class="text-black">{{product.name}}</span>
+                      <div class="text-gray-400"> KSh.
+                        {{product.price}}
+                      </div>
+                      <div class=" p-1 text-right text-red-600 text-xs">
+                        <button (click)="addtoCart(product, item)" class="p-1 outline-offset-0 rounded-md border-2 border-red-700"> ADD TO CART</button>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="flex-1 xs:mx-2 sm:mx-3 md:mx-3 lg:mx-6 ">
+          <div class="xs:w-36 sm:w-48 md:w-58 lg:w-56 h-auto bg-white">
+            <div class="text-xl p-2 text-green-500">Cart Summary</div>
+            <div class="px-2">
+              <div class="border-t-2 border-gray-150 w-100%"></div>
+            </div>
+            <div class="flex flex-auto w-full py-2">
+              <div class="p-2 flex flex-auto text-sm">Subtotal</div>
+              <div class=" flex flex-row text-lg font-semibold text-right p-1 mr-2">KSh. {{grandTotal}}</div>
+            </div>
+
+            <div class=" px-2">
+              <div class="border-t-2 border-gray-150 w-100%"></div>
+            </div>
+            <div class="p-2 text-[9px]"> DELIVERY FEES NOT INCLUDED YET. </div>
+
+            <div class="px-2">
+              <button routerLink="/core/checkout"
+                class="w-[96%] h-8 mb-2 rounded-md outline-offset-0 border-2 text-sm text-green-600 border-green-500">
+                Checkout (Ksh. {{grandTotal}})</button>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </nz-content>
+  <nz-footer></nz-footer>
+</nz-layout>
+</div>

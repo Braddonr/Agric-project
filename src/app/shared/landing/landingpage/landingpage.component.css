@@ -1,0 +1,280 @@
+/* 
+      :host{
+        text-align: center;
+      } */
+
+      .font{
+        font-family: 'MuseoModerno', cursive;
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif; 
+        font-weight: 800;   
+      }
+
+    /* ng-zorro properties for small screens */
+      @media only screen and (min-width: 250px) and (max-width: 600px){
+        nz-header{
+          color: rgb(10, 9, 9);
+          height: 200px;
+          /* position:relative; */
+          background-image: url("/assets/images/try.jpg");
+          background-repeat: no-repeat;
+          background-size: 600px 200px;
+        }
+
+        nz-sider {
+        background: rgb(255, 255, 255);
+        color: rgb(8, 7, 7);
+        top: 15px;        
+        height: auto;
+        max-height: 600px;
+        }
+  
+        nz-content {
+          background: rgb(248, 248, 248);
+          color: rgb(36, 33, 33);
+          /* min-height: 1050px; */
+          /* margin-left: 0; */
+        }
+  
+        nz-layout {
+          margin-bottom: 48px;
+          background: rgb(248, 248, 248);
+          min-width: 420px;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+/*   
+        nz-layout nz-layout,
+        nz-layout:last-child {
+          margin: 0;
+        } */
+      }
+  
+        nz-header{
+          color: rgb(10, 9, 9);
+          height: 200px;
+          position:relative;
+          background-image: url("/assets/images/try.jpg");
+          background-repeat: no-repeat;
+          background-size: 1710px 200px;
+        }
+       /* .autocomplete{
+        background-color: gray;
+        width: 600px;
+       } */
+        
+       
+        .icon-button {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          color: #fdfcfc;
+          background: #ffffff;
+          border: none;
+          outline: none;
+          border-radius: 50%;
+        }
+  
+        .cart-button {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          color: #fdfcfc;
+          background: green-600px;
+          border: none;
+          outline: none;
+          border-radius: 50%;
+        }
+
+        @media only screen and (min-width: 280px) and (max-width: 600px){
+          .cart-button {
+            position: relative;
+            padding-top: 16px;
+            padding-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 18px;
+            color: #fdfcfc;
+            background: green-600px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+          }          
+          
+        }
+
+        /* @media only screen and (min-width: 610px) and (max-width: 768px){
+          .cart-button {
+            position: relative;
+            padding-top: 16px;
+            padding-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 18px;
+            color: #fdfcfc;
+            background: green-600px;
+            border: none;
+            outline: none;
+            border-radius: 50%;
+          }          
+          
+        } */
+        
+        .icon-button:hover {
+          cursor: pointer;
+        }
+        
+        .icon-button:active {
+          background: #cccccc;
+        }
+        
+        .icon-button__badge {
+          position: absolute;
+          top: 7px;
+          right: 7px;
+          width: 13px;
+          height: 13px;
+          background: red;
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          font-size: 8px;
+        }
+        .button__badge {
+          position: absolute;
+          top: -5px; 
+          right: -5px;
+          width: 16px;
+          height: 16px;
+          background: red;
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          font-size: 12px;
+        }
+  
+        nz-footer {
+          background: lightgray;
+          color: rgb(83, 83, 83);
+         
+        }
+  
+        .custom-search {
+          position: relative;
+          width: 300px;
+        }
+        .custom-search-input {
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 100px;
+          padding: 10px 100px 10px 20px; 
+          line-height: 1;
+          box-sizing: border-box;
+          outline: none;
+        }
+        .custom-search-button {
+          position: absolute;
+          right: 15px; 
+          top: 5px;
+          bottom: 5px;
+          border: 0;
+          background: #117a178c;
+          color: #fff;
+          outline: none;
+          margin: 0;
+          padding: 0 15px;
+          padding-right: 15px;
+          border-radius: 8px;
+          z-index: 2;
+        }
+
+  /* Footer on mobile screen */
+        @media only screen and (min-width: 280px) and (max-width: 600px){
+          .custom-search {
+            position: relative;
+            width: 300px;
+          }
+          .custom-search-input {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 100px;
+            padding: 10px 60px 10px 4px; 
+            line-height: 1;
+            box-sizing: border-box;
+            outline: none;
+          }
+          .custom-search-button {
+            position: absolute;
+            right: 8px; 
+            top: 8px;
+            bottom: 5px;
+            border: 0;
+            background: #117a178c;
+            color: #fff;
+            outline: none;
+            margin: 0;
+            /* padding: 0 15px;
+            padding-right: 8px; */
+            border-radius: 8px;
+            /* z-index: 2; */
+            padding: 0px 0px 0px 0px;
+            width: 52px;
+            height: 20px;
+            font-size: 8px;
+            justify-content: center;
+            align-items: center;
+            
+          }      
+        } 
+  /* CSS for search bar */
+        .certain-search-item-count {
+          position: absolute;
+          color: #999;
+          right: 16px;
+        }
+  
+        .more-link {
+          float: right;
+        }
+
+        nz-sider {
+          background: rgb(255, 255, 255);
+          color: rgb(8, 7, 7);
+          top: 15px;        
+         height: auto;
+         max-height: 600px;
+        }
+  
+        nz-content {
+          background: rgb(248, 248, 248);
+          color: rgb(36, 33, 33);
+          min-height: 1050px;
+          margin-left: 0;
+        }
+  
+        nz-layout {
+          margin-bottom: 48px;
+          background: rgb(248, 248, 248);
+        }
+  
+        nz-layout nz-layout,
+        nz-layout:last-child {
+          margin: 0;
+        }
+      
+  
+        

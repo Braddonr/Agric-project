@@ -1,0 +1,263 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800&family=Open+Sans&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />  
+</head>
+<div class="font">
+<nz-layout>
+  <nz-header>  
+   <div class="flex xs:space-x-10">
+      <!-- <div class="flex flex-auto xs:my-auto">
+        <div class="lg:p-4 lg:px-1 lg:ml-8 xs:h-6 xs:w-24 sm:h-6 sm:w-28 lg:h-12 lg:w-40">
+          <img src="/assets/images/logo.png">
+        </div>
+      </div> -->
+       
+    <div class="flex flex-auto xs:py-6 sm:py-4 md:py-4 lg:py-4">
+      <div class="xs:h-6 xs:w-24 sm:h-6 sm:w-28 lg:h-12 lg:w-40">
+        <img src="/assets/images/logo.png">
+        </div>
+      </div>
+
+      <div class="flex xs:space-x-1 sm:space-x-3 lg:space-x-3 lg:text-right">
+        <div class="xs:py-4 sm:py-4 md:py-4 lg:py-4">
+          <button routerLink="/core/cart" class="flex flex-auto rounded-md text-white bg-green-600 text-center text-sm xs:w-[80px] xs:h-10 lg:w-auto lg:h-auto">
+            <div class="p-2 xs:text-xs lg:text-base">
+              KSh. {{grandTotal}}.0
+            </div>
+            <div class="cart-button">
+              <span class="material-symbols-outlined text-white xs:py-4">shopping_cart</span>
+              <span class="button__badge text-lg">{{totalItem}}</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="flex py-4">
+          <button type="button" class="icon-button">
+            <span class="material-symbols-outlined text-gray-200"> chat</span>
+            <span class="icon-button__badge">1</span>
+          </button>
+        </div>
+
+        <div class="flex py-4">
+          <button type="button" class="icon-button">
+            <span class="material-icons text-gray-200">notifications</span>
+            <span class="icon-button__badge">1</span>
+          </button>
+        </div>
+
+        <button routerLink="/shared/prof">
+          <img src="/assets/images/profile_photo.png" class="xs:h-8 xs:w-8 sm:h-8 sm:w-8 md:w-9 md:h-9 lg:h-10 lg:w-10 object-cover rounded-full">
+        </button>
+        <button routerLink="/core/ads" class="rounded-sm bg-red-500 text-white text-sm font-light text-center xs:h-8 xs:w-12 sm:h-8 sm:w-14 md:h-8 md:w-16 lg:h-8 lg:w-18 mt-5">SELL</button>
+    </div>
+
+    </div>
+    <div class="text-center justify-items-center w-full">
+      <p class="xs:text-base sm:text-lg md:text-lg lg:text-xl">Enjoy our collection at the touch of a button</p>
+      <div class="text-center xs:w-60 sm:w-[300px] md:w-[380px] lg:w-80 mx-auto">        
+        
+        <nz-input-group [nzSuffix]="suffixIconSearch" class=""> 
+        <input [(ngModel)]="searchTerm" (keyup)="search($event)" type="text" nz-input placeholder="Type your search here" class="" />
+        </nz-input-group> 
+        <ng-template #suffixIconSearch>
+          <i nz-icon nzType="search" nzTheme="outline"></i>
+        </ng-template> 
+      
+        <!-- <p-autoComplete  
+            [inputStyle]="{'width':'300px','font-size': '16px', 'border-radius': '0.25rem', 'background-color': 'white', 'focus' : 'border-green'}"
+            [(ngModel)]="selectedProduce"
+            [group]="true" 
+            [suggestions]="filteredGroups" 
+            (completeMethod)="filterGroupedProduce($event)" 
+            field="label" 
+            placeholder="Type your search here" 
+            [minLength]="1">
+          <ng-template let-group pTemplate="selectedGroup" [ngStyle]="{'background-color':'white'}">
+            <div class="flex align-items-center ui-helper-clearfix" [ngStyle]="{'background-color':'white'}">
+              {{group.label}}
+            </div>
+          </ng-template>
+        </p-autoComplete> -->
+  
+        <!-- <div class="example-input">
+          <nz-input-group nzSize="large" [nzSuffix]="suffixIcon">
+            <input
+              placeholder="Type your search here"
+              nz-input
+              [(ngModel)]="inputValue"
+              (ngModelChange)="onChange($event)"
+              [nzAutocomplete]="auto"
+            />
+          </nz-input-group>
+          <ng-template #suffixIcon>
+            <i nz-icon nzType="search"></i>
+          </ng-template>
+          <nz-autocomplete #auto> -->
+            <!-- [nzDataSource]="filteredOptions" -->
+            <!-- <nz-auto-optgroup *ngFor="let group of optionGroups" [nzLabel]="groupTitle">
+              <ng-template #groupTitle>
+                <span>
+                  {{ group.label }}
+                  <a class="more-link" href="https://www.google.com/search?q=ng+zorro" target="_blank">(25)</a>
+                </span>
+              </ng-template>
+              <nz-auto-option *ngFor="let option of group.items" [nzLabel]="option.label" [nzValue]="option.label">
+                {{ option.label }}
+                <span class="certain-search-item-count">{{ option.count }} (6) Farmers selling</span>
+              </nz-auto-option>
+            </nz-auto-optgroup>
+          </nz-autocomplete> -->
+        <!-- </div> -->
+
+      </div>
+    </div>
+
+  </nz-header>
+
+
+  <nz-layout>
+    <nz-sider [nzWidth]="230" [nzCollapsible]="true" nzBreakpoint="md" [nzCollapsedWidth]='0' theme="dark" [nzTrigger]="" class="xs:ml-[1px] sm:ml-[5px] md:ml-[25px] lg:ml-[100px]">
+      <div class="xs:text-[13px] sm:text-[13px] md:text-[14px] lg:text-[13px]">
+        <!-- <ul class="text-xs flex flex-wrap list-none mx-2 sm:px-9 lg:px-0">
+          <li *ngFor="let product of filterCategory | filter: searchKey:'name'"> <!-- Use Pipes -->
+            <!-- <a 
+              class="bg-white p-1 xs:h-34 xs:w-[180px] sm:h-43 sm:w-40 md:h-43 md:w-[180px] lg:h-52 lg:w-56 border-0 border-solid border-whitesmoke rounded-none m-2 flex flex-col overflow-hidden hover: opacity-90">
+              <button (click)="selectProduct(product)" ><img src="{{product.imageURL}}" alt=""></button> --> 
+                 <P  style="margin-left: 20px; font-size: large;">CATEGORIES</P>
+        <div class="flex items-center px-4"  *ngFor="let category of categories" >
+    
+          <img src="{{category.iconURL}}" class="xs:h-6 xs:w-6 sm:h-5 sm:w-5 lg:h-7 lg:w-7">
+          <div>
+            <div class="px-3 py-2">
+              
+              <button (click)="filter(category.categoryName)">{{category.categoryName}}</button>
+              <div class="text-gray-400">{{category.total}}</div>
+            </div>
+          </div>
+          
+
+          <!-- <img src="/assets/icons/barley.png" class="xs:h-6 xs:w-6 sm:h-5 sm:w-5 lg:h-7 lg:w-7">
+          <div>
+            <div class="px-3 py-2">
+              <button (click)="filter('Cereals and Grains')">Cereals and Grains</button>
+              <div class="text-gray-400">100</div>
+            </div>
+          </div> -->
+
+        </div>
+<!--        
+        <div class="flex items-center px-4">
+          <img src="/assets/icons/gardening.png" class="xs:h-6 xs:w-6 sm:h-5 sm:w-5 lg:h-7 lg:w-7">
+          <div>
+            <div class="px-3 py-1">
+              <button (click)="filter('Tools and Accessories')">Tools & Accessories</button>
+              <div class="text-gray-400">200</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center px-4">
+          <img src="/assets/icons/tractor.png" class="xs:h-6 xs:w-6 sm:h-5 sm:w-5 lg:h-7 lg:w-7">
+          <div>
+            <div class="px-3 py-1">
+              <button (click)="filter('Farm Machinery')">Farm Machinery</button>
+              <div class="text-gray-400">30</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center px-4">
+          <img src="/assets/icons/room-service.png" class="xs:h-6 xs:w-6 sm:h-5 sm:w-5 lg:h-7 lg:w-7">
+          <div>
+            <div class="px-3 py-1">
+              <button (click)="filter('Agriculture Services')">Agriculture Services</button>
+              <div class="text-gray-400">32</div>
+            </div>
+          </div>
+        </div> --> 
+      </div>
+    </nz-sider>
+
+    <nz-content>
+      <div class="flex space-x-4 sm:mx-[50px] lg:mx-4 py-4">
+        <img class="xs:w-[290px] xs:h-[100px] sm:w-[350px] md:w-[00px] lg:w-[705px] lg:h-[160px]" src="/assets/images/Bitmap.png">
+        <img class="xs:w-[100px] xs:h-[100px] sm:w-[140px] md:w-[105px] lg:w-[215px] lg:h-[160px]" src="/assets/images/Group2.png">
+      </div>
+      <ul class="text-xs flex flex-wrap list-none mx-2 sm:px-9 lg:px-0 height:800px">
+        <li *ngFor="let product of filterCategory | filter: searchKey:'name'"> <!-- Use Pipes -->
+          <a 
+            class="bg-white p-1 xs:h-34 xs:w-[220px] sm:h-43 sm:w-40 md:h-43 md:w-[200px] lg:h-52 lg:w-56 border-0 border-solid border-whitesmoke rounded-none m-2 flex flex-col overflow-hidden hover: opacity-90">
+            <button (click)="selectProduct(product)" ><img src="{{product.imageURL}}" alt=""></button>
+            <div class="text-xs">
+              <div class="text-gray-400" style="font-size: 15px;">
+                {{product.categoryName}}
+              </div>
+              <span class="text-black" style="font-size: 10px;">{{product.name}}</span>
+              <div class="text-gray-400" style="color: black;"> KSh.
+                {{product.price}}
+              </div>
+              <div class="text-gray-400" style="color: black;"> 
+               Quantity {{product.aggregate}}
+              </div>
+              <div class=" p-1 text-right text-red-600 text-xs">
+                <button (click)="addtoCart(product, item)" class="p-1 outline-offset-0 rounded-md border-2 border-red-900"> ADD TO CART</button>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      </nz-content>
+  </nz-layout>
+<div class="xs:h-[50px] sm:h-[72px] md:h-[86px] lg:h-[120px] py-4">
+  <img src="/assets/images/footer.png">
+ </div>
+  <nz-footer>
+
+    <div class="flex justify-center space-x-12">
+      <div class="xs:text-xs text-black">
+        SIGN UP TO OUR NEWSLETTER
+        <br class="text-gray-500">
+        Be the first to receive our promotions
+      </div>
+      <div class="custom-search">
+        <input type="text" class="custom-search-input xs:text-[10px] lg:text-sm" placeholder="Enter your email address">
+        <button class="custom-search-button" type="submit">SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="p-6">
+      <div class="border-t-2 border-white w-100%"></div>
+    </div>
+    <div class="text-lg text-center">
+      Stay Connected
+    </div>
+    <div class="p-3 flex justify-center space-x-6">
+      <button><i nz-icon nzType="facebook" nzTheme="fill" style="font-size:18px;"></i></button>
+      <button><i nz-icon nzType="twitter" nzTheme="outline" style="font-size:18px;"></i></button>
+      <button><i nz-icon nzType="instagram" nzTheme="outline" style="font-size: 18px;"></i></button>
+    </div>
+    <div class="p-4 flex xs:text-[10px] lg:text-xs underline justify-center space-x-6">
+      <a href="#" class="text-gray-500">How to Shop</a>
+      <a href="#" class="text-gray-500">About Us</a>
+      <a href="#" class="text-gray-500">Terms & Conditions</a>
+    </div>
+    <div class="p-2 flex flex-wrap xs:text-[10px] lg:text-xs underline justify-center space-x-6">
+      <a href="#" class="text-gray-500">My Account</a>
+      <a href="#" class="text-gray-500">My Orders</a>
+      <a href="#" class="text-gray-500">Track My Order</a>
+      <a href="#" class="text-gray-500">Privacy Policy</a>
+      <a href="#" class="xs:py-2 text-gray-500">Returns Policy</a>
+      <a href="#" class="xs:py-2 text-gray-500">Refunds Policy</a>
+    </div>
+    <div class="p-2 flex xs:text-[10px] lg:text-xs underline justify-center space-x-6">
+      <a href="#" class="text-gray-500">FAQs</a>
+      <a href="#" class="text-gray-500">Shipping & Delivery Policy</a>
+      <a href="#" class="text-gray-500">Customer Service</a>
+    </div>
+  </nz-footer>
+</nz-layout>
+</div>ttp://localhost:3000/products

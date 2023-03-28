@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-info">
+      <h3>Congratulation!! You have verified your email successfully✅</h3>
+      <p>Please Send verification code to the phone number {{phoneNumber}} <strong>registered</strong>  with this account.</p>
+      <br>
+      <form class="space-y-6"  [formGroup]="phoneForm"   (ngSubmit)="phoneVerify()">
+        <input id="phonenumber" formControlName="phoneNumber" type="text" value="+254 0" placeholder="+254 7 xxxxxxxx" >
+        <span *ngIf="phoneForm.get('phoneNumber')?.invalid && phoneForm.get('phoneNumber')?.touched" class="text-red-600"></span>
+        <br>
+        <button 
+        class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Send</button>
+      </form>
+      <br> 
+      <p>Submit the Code you sent via SMS to complete the account verification!</p>
+      <form class="space-y-6" [formGroup]="otpForm"  (ngSubmit)="otpVerify()">
+        <input id="otp" formControlName="otp" type="text" placeholder="Enter OTP CODE HERE" >
+        <span *ngIf="otpForm.get('otp')?.invalid && otpForm.get('otp')?.touched" class="text-red-600"></span>
+        <br>
+        <button 
+        class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Submit</button>
+        <p>Didn't receive code?   <a href="http://">Resend Code</a> </p> 
+        <p> <a href="http://">Change Phone Number</a> </p>
+      </form>
+    </div>
+    <!-- <div nz-result-extra>
+      <button routerLink="/shared/login" style="margin-right: 320px;"
+        class="justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Proceed
+        to Login</button>
+  
+    </div> -->
+  </div>
+
+  <style>
+    .card {
+      width: 500px;
+      position: fixed;
+      border: 1px solid white;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      margin-top: 40px;
+      margin-left: 600px
+    }
+
+    .card-info {
+      padding: 20px;
+    }
+
+    .card-info h2 {
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .card-info p {
+      font-size: 16px;
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+
+    .card-info a {
+     
+      margin-top: 20px;
+      font-size: 16px;
+      text-align: center;
+     
+     
+    }
+    h3 {
+      border: 1px solid #ccc;
+      padding-right: 2px;
+      border-radius: 5px;
+      max-width: 500px;
+  
+  
+}
+    
+  </style>
+</body>
+</html>
+
+
+<!-- RESEARCH PROJECT TITLE: Cloud Deployment: Optimizing Application Performance and Scalability
+General Objectives
+Cloud Deployment: Optimizing Application Performance and Scalability
+
+Specific Objectives
+To develop a web application
+To deploy the web application in the cloud such as Heroku 
+Connect two cloud application using APIS -->
+
+

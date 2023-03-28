@@ -1,0 +1,280 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800&family=Open+Sans&family=Source+Sans+Pro:wght@200&display=swap"
+    rel="stylesheet">
+</head>
+<div class="font">
+  <nz-layout>
+    <nz-header>
+      <div class="">
+        <div class="flex">
+          <div class="flex xs:space-x-8">
+            <div
+              class="xs:absolute xs:left-0 xs:top-0 xs:py-4 sm:p-2 md:p-2 lg:p-4 px-1 mr-10 xs:h-6 xs:w-20 sm:h-5 sm:w-24 md:h-5 md:w-24 lg:h-6 lg:w-36">
+              <a routerLink="/shared/landingpage"><img src="/assets/images/logo.png"></a>
+            </div>
+
+            <div class="flex xs:space-x-1 sm:space-x-24 md:space-x-36 lg:space-x-96">
+              <div class="xs:w-28 sm:w-36 md:w-40 lg:w-96 ">
+                <nz-input-group [nzSuffix]="suffixIconSearch">
+                  <input type="text" nz-input placeholder="Type your search here" />
+                </nz-input-group>
+                <ng-template #suffixIconSearch>
+                  <i nz-icon nzType="search"></i>
+                </ng-template>
+              </div>
+
+              <div class="flex flex-row xs:space-x-1 sm:space-x-2 md:space-x-2 lg:space-x-3 sm:mx-2">
+                <div class="py-4">
+                  <button routerLink="/core/cart"
+                    class="flex flex-auto rounded-md bg-white text-green-600 text-center text-sm xs:text-xs xs:h-8 xs:w-18 sm:h-10 md:h-10 lg:w-full lg:h-10">
+                    <div class="xs:p-1 sm:p-1 md:p-1 lg:p-1 lg:whitespace-nowrap lg:py-2">
+                      KSh. {{grandTotal}}.0
+                    </div>
+                    <div class="icon-button">
+                      <span class="material-symbols-outlined text-green-600 text-[16px]">shopping_cart</span>
+                      <span class="button__badge">{{totalItem}}</span>
+                    </div>
+                  </button>
+                </div>
+
+                <div class="flex py-4">
+                  <button type="button" class="icon-button">
+                    <span class="material-symbols-outlined text-gray-200"> chat</span>
+                    <span class="icon-button__badge">1</span>
+                  </button>
+                </div>
+
+                <div class="flex py-4">
+                  <button type="button" class="icon-button">
+                    <span class="material-icons text-gray-200">notifications</span>
+                    <span class="icon-button__badge">1</span>
+                  </button>
+                </div>
+
+                <button routerLink="/shared/prof">
+                  <img src="/assets/images/profile_photo.png"
+                    class="xs:h-8 xs:w-14 sm:h-8 sm:w-12 md:h-10 md:w-10 lg:h-10 lg:w-14 object-cover rounded-full">
+                </button>
+
+                <div class="flex">
+                  <button routerLink="/core/ads"
+                    class="rounded-sm bg-red-500 text-white text-xs font-light text-center xs:h-8 xs:w-10 sm:h-8 sm:w-12 md:h-8 md:w-12 lg:h-8 lg:w-16 mt-4">SELL</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+
+
+    <nz-content>
+      <div class="inner-content">
+        <div class="xs:w-[300px] sm:max-w-screen-lg md:max-w-screen-lg lg:max-w-screen-lg bg-white h-[1100px]">
+          <div class="text-xl text-center py-3">Upload Product</div>
+          <div class="flex flex-auto">
+            <div class="py-8 sm:px-[100px] lg:px-[200px]">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white sm:w-[400px] lg:w-full mb-6 shadow-lg rounded">
+                <div class="px-4 py-5 flex-auto">
+                  <div class="tab-content tab-space">
+                    <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                      <form  class="space-y-6" [formGroup]="uploadProductForm"   (ngSubmit)="uploadproduct()">
+                       
+                       
+                        <div class="flex flex-auto xs:space-x-1 sm:space-x-2 lg:space-x-6">
+                        <div name="category" required
+                        class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[300px]">
+                        <div>
+
+                          <label for="productName" class="block text-sm font-medium text-gray-700">Product Name</label>
+                          <div class="mt-1">
+                            <input id="productName" placeholder="product Name" formControlName="productName"
+                              type="text" autocomplete="productName" required
+                              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <span
+                              *ngIf="uploadProductForm.get('productName')?.invalid && uploadProductForm.get('productName')?.touched"
+                              class="text-red-600">Product Name cannot be Empty</span>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div name="price" required
+                        class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[300px]">
+                        <div>
+
+                          <label for="price" class="block text-sm font-medium text-gray-700"> Product Price</label>
+                          <div class="mt-1">
+                            <input id="price" placeholder="Ksh" formControlName="price" type="number"
+                              autocomplete="price" required
+                              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <span
+                              *ngIf="uploadProductForm.get('price')?.invalid && uploadProductForm.get('price')?.touched"
+                              class="text-red-600">Please Enter the price of your product</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+               
+                    <div class="flex flex-auto xs:space-x-1 sm:space-x-2 lg:space-x-6">
+                      <div name="category" required class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[300px]" >
+                        <div>
+
+                        <label for="category" class="block text-sm font-medium text-gray-700">Category </label>
+                        <div class="mt-1">
+                          <select id="category" placeholder="category" formControlName="categoryName"
+                            type="text" autocomplete="category" required
+                            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <option  *ngFor="let category of categoryList" > {{category}} </option>
+                        </select>
+                          <span
+                            *ngIf="uploadProductForm.get('category')?.invalid && uploadProductForm.get('category')?.touched"
+                            class="text-red-600">Category cannot be Empty</span>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div name="aggregate" required
+                      class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[300px]">
+                      <div>
+
+                        <label for="aggregate" class="block text-sm font-medium text-gray-700"> Quantity</label>
+                        <div class="mt-1">
+                          <input id="aggregate" placeholder="quantity (kgs/bags)" formControlName="aggregate" type="number"
+                            autocomplete="aggregate" required
+                            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          <span
+                            *ngIf="uploadProductForm.get('aggregate')?.invalid && uploadProductForm.get('aggregate')?.touched"
+                            class="text-red-600">Please Enter the quantity of youe product(s)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    
+                    <br>
+                    <div class="flex flex-auto xs:space-x-1 sm:space-x-2 lg:space-x-6">
+                    <div name="location" required
+                      class="rounded-md text-black text-xs xs:w-[140px] sm:w-[180px] lg:w-[300px]">
+                      <div>
+
+                        <label for="location" class="block text-sm font-medium text-gray-700"> Location</label>
+                        <div class="mt-1">
+                          <input id="location" placeholder="location" formControlName="location" type="text"
+                            autocomplete="price" required
+                            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                          <span
+                            *ngIf="uploadProductForm.get('location')?.invalid && uploadProductForm.get('location')?.touched"
+                            class="text-red-600">Please Enter location</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <br>
+                    <div>
+                      <label for="description" class="py-3 text-xs" class="block text-sm font-medium text-gray-700"> Description</label>
+                      <div class="mt-1">
+                        <input id="description" placeholder="description" formControlName="description" type="text"
+                          autocomplete="description" required class="rounded-md text-xs text-gray-400 xs:w-[268px] sm:w-[360px] lg:w-[620px] lg: h-32"
+                      >
+                        <span
+                          *ngIf="uploadProductForm.get('description')?.invalid && uploadProductForm.get('description')?.touched"
+                          class="text-red-600">Please Enter the description</span>
+                      </div>
+                    </div>
+                    <label for="imageURL" class="block text-sm font-medium text-gray-700">Product Image</label>
+                    <!-- <div class="text-sm py-0.5">Add at least 1 photo for this category</div> -->
+
+                    <div class="py-5">
+                      <input type="file" name="file" formControlName="imageURL" id="file" (change)="onFileChanged($event)" />
+              <!-- <button nz-button [nzType]="'primary'" (click)="uploadFile(file)" [nzSize]="'small'">Upload
+              </button>  -->
+                      <!-- <label class="btn btn-default p-0">
+                        <input id="imageURL" formControlName="imageURL" autocomplete="imageURL" type="file"    (change)=" onFileChanged($event)"/>
+                        <span
+                     
+                        *ngIf="uploadProductForm.get('imageURL')?.invalid && uploadProductForm.get('imageURL')?.touched"
+                        class="text-red-600">Product Image cannot be empty</span>
+              
+                      </label> -->
+<!-- 
+                      <nz-upload class="avatar-uploader" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                        nzName="avatar" nzListType="picture-card" [nzShowUploadList]="false"
+                        [nzBeforeUpload]="beforeUpload" (nzChange)="handleChange($event)">
+                        <ng-container *ngIf="!avatarUrl">
+                          <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+                          <div class="ant-upload-text">Upload</div>
+                        </ng-container>
+                        <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+                      </nz-upload> -->
+                      <!-- <button><i nz-icon nzType="plus" nzTheme="outline"
+                        style="font-size: 24px; color: darkgreen; border-radius: 50px; background-color: lightgrey; display: flex; justify-content: center; align-items: center; width: 90px; height: 90px;"></i></button> -->
+                    </div>
+
+                    <div class="text-sm">Each product imagemust not exceed 5 Mb. Supported formats are *.jpg, *.gif
+                      and *.png
+                    </div>
+                    <div>
+                      
+                      <div>
+                        <button type="submit" [disabled]="uploadProductForm.invalid"  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Save</button>
+                        </div>
+                    </div>
+                      </form>
+                    
+                      
+                      
+                      <!-- <div>
+                        <div class="text-center py-6"><button (click)="toggleTabs(2)"
+                            class="bg-green-600 text-white w-[40%] h-12 mb-2 border-2 text-sm">NEXT</button></div>
+                      </div> -->
+                    </div>
+
+                    <!-- <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
+
+
+                      <div class="flex xs:space-x-1 sm:space-x-2 md:space-x-4 lg:space-x-4">
+                        <input placeholder="Title*" id="title" type="text"
+                          class="flex flex-auto rounded-md text-xs text-gray-400 xs:w-[120px] lg:w-[300px]">
+                        <input placeholder="Enter Quantity*" id="quantity" type="number"
+                          class="flex flex-auto rounded-md text-xs text-gray-400 xs:w-[120px] lg:w-[300px]">
+                      </div>
+
+                      <div class="py-3 text-xs">
+                        <input placeholder="Description*" id="description" type="text"
+                          class="rounded-md text-xs text-gray-400 xs:w-[268px] sm:w-[360px] lg:w-[620px] lg: h-32">
+                      </div>
+                      <div>
+                        <input placeholder="Price" id="price" type="number"
+                          class="rounded-md text-xs text-gray-400 xs:w-[268px] lg:w-[300px] ">
+                      </div>
+
+                      <div>
+                        <button type="submit" [disabled]="uploadProductForm.invalid"  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">Save</button>
+                        </div>
+
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class=" py-4">
+        <img class="w-100%" src="/assets/images/footer.png">
+      </div>
+    </nz-content>
+  </nz-layout>
+</div>

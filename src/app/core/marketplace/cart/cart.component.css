@@ -1,0 +1,177 @@
+nz-header {
+  background: rgb(45, 167, 45);
+  width:100%;
+}
+ .font{
+  font-family: 'MuseoModerno', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif; 
+  font-weight: 800;   
+}
+
+ .head-example {
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  background: #eee;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #fdfcfc;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  background: #cccccc;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 13px;
+  height: 13px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 6px;
+}
+.button__badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 600px){
+   nz-layout{
+    width: 100%;
+    overflow-x: hidden;
+   }
+  
+  .icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #fdfcfc;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+  }
+    
+  .icon-button__badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 13px;
+    height: 13px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 6px;
+  }
+  
+  .inner-content {
+    background: rgb(245, 237, 237);
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+    left:0%;
+    top: 100px;
+  
+  }
+
+  nz-content {
+    /* padding-left: 8px; */
+    background: rgb(245, 237, 237);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  nz-breadcrumb {
+   position: absolute;
+   left: 0%;
+  }
+
+  html, body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(22, 218, 97, 0.2);
+    align-items: flex-start;
+  }
+  
+}
+
+ .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(22, 218, 97, 0.2);
+    margin: 16px 24px 16px 0;
+    float: left;
+  }
+
+  [nz-menu] {
+    line-height: 64px;
+    width: fit-content;
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+    padding-left: 36px;
+  }
+
+  nz-content {
+    padding: 0 50px;
+    background: rgb(245, 237, 237);
+    width: fit-content;
+    overflow-x: hidden;
+  }
+
+  nz-footer {
+    text-align: center;
+    background: rgb(245, 237, 237);
+  }
+
+  .inner-content {
+    background: rgb(245, 237, 237);
+    padding-left: 36px;
+    padding-top: 16px;
+    min-height: 280px;
+  }
