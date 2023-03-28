@@ -72,7 +72,7 @@ ngOnInit(): void {
   formData.append('farmingDocument', this.selectedFile, this.selectedFile.name);
 
 
-  this.http.post<any>("https://digitalfarming.herokuapp.com/displayFarmerProfile", this.myForm.value)
+  this.http.post<any>("https://digitalfarming.herokuapp.com/displayFarmerProfile", formData)
   .subscribe({
    next:(res)=> {
     alert("Farmer details updated");
